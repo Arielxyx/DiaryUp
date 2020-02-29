@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/navigationbar_bg" >
+
+    <com.example.diaryup.view.LineEditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignTop="@+id/rl"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="#ffffff"
+        android:fadingEdge="vertical"
+        android:gravity="center"
+        android:hint="标题"
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="10dp"
+        android:scrollbars="vertical"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#235D88" >
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/navigationbar_backup" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:text="新增记事"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/navigationbar_save" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="547dp"
+        android:layout_below="@+id/rl"
+        android:layout_marginTop="54dp"
+        android:background="#ffffff">
+
+        <com.example.diaryup.view.LineEditText
+            android:id="@+id/et_note"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:fadingEdge="vertical"
+            android:gravity="top"
+            android:hint="内容"
+            android:inputType="textMultiLine"
+            android:lineSpacingExtra="10dp"
+            android:scrollbars="vertical"
+            android:textSize="18sp" />
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_sf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/data_rl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="#ffffff"
+        android:padding="5dp"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/ib_lk"
+            android:layout_width="24dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:background="@drawable/un_locky"
+            android:onClick="onLOCK" />
+
+        <ImageButton
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="9dp"
+            android:background="@drawable/fenxiang"
+            android:onClick="onFX" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/data_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomMenu"
+        android:padding="5dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/data_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="提醒时间：2016-05-11 12:01"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/bt2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/bt1"
+            android:onClick="onDataChange"
+            android:text="修改" >
+        </Button>
+
+        <Button
+            android:id="@+id/bt1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/data_tv"
+            android:onClick="onDataCancel"
+            android:text="取消" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomMenu"
+        android:src="@drawable/line" />
+
+    <GridView
+        android:id="@+id/bottomMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:background="@drawable/navigationbar_bg"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit" />
+
+</RelativeLayout>
